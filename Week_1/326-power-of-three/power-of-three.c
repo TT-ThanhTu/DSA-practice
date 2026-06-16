@@ -1,12 +1,9 @@
- bool isPowerOfThree(int n) {
-    if (n <= 0)
+bool isPowerOfThree(int n) {
+    if (n == 1)
+        return true;
+
+    if (n <= 0 || n % 3 != 0)
         return false;
 
-    long long x = 1;
-
-    while (x < n) {
-        x *= 3;
-    }
-
-    return x == n;
+    return isPowerOfThree(n / 3);
 }
