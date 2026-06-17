@@ -17,12 +17,13 @@ char* toHex(int num) {
 
     while(n > 0) {
         int r = n % 16;
-        ans[k++] = digit[r];
+        ans[k] = digit[r];
+        k++;
         n /= 16;
     }
 
     ans[k] = '\0';
-    // lay nguoc mang
+    // lay nguoc mang bang cach doi cho cac phan tu
     for(int i = 0, j = k - 1; i < j; i++, j--) {
         char t = ans[i];
         ans[i] = ans[j];
