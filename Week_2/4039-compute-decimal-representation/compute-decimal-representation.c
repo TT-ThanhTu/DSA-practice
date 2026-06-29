@@ -2,7 +2,7 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 int* decimalRepresentation(int n, int* returnSize) {
-    int *a= (int*) malloc(n*sizeof(int));
+    int *a= (int*) malloc(10*sizeof(int));
     int i=0;
     long long power=1;
     while (n > 0) {
