@@ -1,24 +1,21 @@
 int encrypt(int x) {
-    int temp = x;
-    int maxDigit = 0;
-    int digits = 0;
+    int t = x;
+    int mx = 0;
+    int len = 0;
 
-    // Tìm chữ số lớn nhất và đếm số chữ số
-    while (temp > 0) {
-        int digit = temp % 10;
-        if (digit > maxDigit)
-            maxDigit = digit;
-        digits++;
-        temp /= 10;
+    while (t) {
+        if (t % 10 > mx)
+            mx = t % 10;
+        len++;
+        t /= 10;
     }
 
-    // Tạo số mới
-    int res = 0;
-    while (digits--) {
-        res = res * 10 + maxDigit;
+    int ans = 0;
+    while (len--) {
+        ans = ans * 10 + mx;
     }
 
-    return res;
+    return ans;
 }
 
 int sumOfEncryptedInt(int* nums, int numsSize) {
